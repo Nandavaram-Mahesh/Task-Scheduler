@@ -1,1 +1,1 @@
-A task scheduler taht schedules tasks for users
+A task scheduler that schedules tasks for users
