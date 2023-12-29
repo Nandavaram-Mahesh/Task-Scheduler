@@ -1,7 +1,16 @@
 import mongoose, { Schema } from "mongoose";
 
+// import aggregatePaginate  from 'mongoose-aggregate-paginate-v2';
+
 const TaskSchema = new Schema(
 {
+    UserId: {
+        type:String,
+    },
+    CreatedDate: {
+        type: Date,
+        default: Date.now
+    },
     UserName: {
         type:String,
     }, 
@@ -18,11 +27,11 @@ const TaskSchema = new Schema(
         type:String
     }, 
     usualTasks: {
-        type:Map,
-        of:[
+        type: Map,
+        of: [ 
             { startTime: { type: String }, duration: { type: String } }
-          ]
-    },
+    ]}
+        ,
     enjoyableActivities: {
         type: [
           { type: String }
@@ -31,6 +40,7 @@ const TaskSchema = new Schema(
 }
 )
 
+// TaskSchema.plugin(aggregatePaginate);
 
 const Task = mongoose.model('Task', TaskSchema);
 

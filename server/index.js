@@ -4,12 +4,15 @@ import connectDB from './db/index.js'
 
 const app = express()
 
+// middlewares
 app.use(express.json())
 app.use(express.urlencoded())
 
-
+// Routes
 app.use('/api/task',taskRouter)
 
+
+//  Server and Db Connection
 
 async function startServer (){
     
@@ -21,6 +24,7 @@ async function startServer (){
         throw new error
     }
 }
+
 
 startServer()
 
