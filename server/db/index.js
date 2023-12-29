@@ -7,7 +7,7 @@ export let dbInstance = undefined
 const connectDB = async()=>{
     try{
 
-        const connectionInstance = await mongoose.connect(`mongodb+srv://Mahesh:Mahesh@cluster0.igiqnws.mongodb.net/TaskManager`);
+        const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}`);
         dbInstance = connectionInstance
         
         console.log(
